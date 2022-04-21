@@ -8,8 +8,6 @@ export type VolumeMetricUnits =
   | 'ml'
   | 'l'
   | 'kl'
-  | 'Ml'
-  | 'Gl'
   | 'm3'
   | 'km3'
   | 'cl'
@@ -31,7 +29,8 @@ export type VolumeImperialUnits =
   | 'qt'
   | 'gal'
   | 'ft3'
-  | 'yd3';
+  | 'yd3'
+  | 'bbl-oil';
 
 const metric: Record<VolumeMetricUnits, Unit> = {
   mm3: {
@@ -82,20 +81,6 @@ const metric: Record<VolumeMetricUnits, Unit> = {
       plural: 'Kilolitres',
     },
     to_anchor: 1000,
-  },
-  Ml: {
-    name: {
-      singular: 'Megalitre',
-      plural: 'Megalitres',
-    },
-    to_anchor: 1_000_000,
-  },
-  Gl: {
-    name: {
-      singular: 'Gigalitre',
-      plural: 'Gigalitres',
-    },
-    to_anchor: 1_000_000_000,
   },
   m3: {
     name: {
@@ -227,6 +212,13 @@ const imperial: Record<VolumeImperialUnits, Unit> = {
       plural: 'Cubic yards',
     },
     to_anchor: 25852.7,
+  },
+  'bbl-oil': {
+    name: {
+      singular: 'Barrel of oil',
+      plural: 'Barrels of oil',
+    },
+    to_anchor: 5376,
   },
 };
 

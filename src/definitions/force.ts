@@ -2,7 +2,13 @@ import { Measure, Unit } from './../index';
 export type ForceUnits = ForceSIUnits;
 export type ForceSystems = 'SI';
 
-export type ForceSIUnits = 'N' | 'kN' | 'lbf';
+export type ForceSIUnits =
+  | 'N'
+  | 'kN'
+  | 'lbf'
+  | 'kip'
+  | 'ton-f-us'
+  | 'tonne-f-metric';
 
 const SI: Record<ForceSIUnits, Unit> = {
   N: {
@@ -22,9 +28,30 @@ const SI: Record<ForceSIUnits, Unit> = {
   lbf: {
     name: {
       singular: 'Pound-force',
-      plural: 'Pound-forces',
+      plural: 'Pound-force',
     },
-    to_anchor: 4.44822,
+    to_anchor: 4.4482216,
+  },
+  kip: {
+    name: {
+      singular: 'Kip-force',
+      plural: 'Kip-force',
+    },
+    to_anchor: 4448.2216,
+  },
+  'ton-f-us': {
+    name: {
+      singular: 'Ton-force US',
+      plural: 'Ton-force US',
+    },
+    to_anchor: 8896.443230521,
+  },
+  'tonne-f-metric': {
+    name: {
+      singular: 'Tonne-force',
+      plural: 'Tonne-force',
+    },
+    to_anchor: 9806.65,
   },
 };
 
