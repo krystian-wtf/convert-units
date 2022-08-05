@@ -8,5 +8,4 @@ scratch
 *.swp
 
 coverage
-lib
 convert-units-*.tgz
